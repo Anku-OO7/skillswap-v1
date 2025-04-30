@@ -153,3 +153,5 @@ CORS_ALLOWED_ORIGINS =[
     "https://skillswap-v1.vercel.app",
 ]
 CORS_ALLOW_CREDENTIALS= True
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
