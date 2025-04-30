@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios from "../api/axios";
 import "../../styles/Auth.css";
 import { toast } from "react-toastify";
 
@@ -16,7 +16,7 @@ const Signup = () => {
         setError("");
 
         try {
-            const response = await axios.post("http://localhost:8000/api/users/signup/", {
+            const response = await axios.post("/users/signup/", {
                 email,
                 password,
             });

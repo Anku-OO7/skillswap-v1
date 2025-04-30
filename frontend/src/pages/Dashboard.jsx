@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios from "../api/axios";
 import "../styles/Dashboard.css";
 import Loader from "../components/Loader";
 import { toast } from "react-toastify";
@@ -22,7 +22,7 @@ const Dashboard = () => {
             if (!user) return;
             try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get("http://localhost:8000/api/users/matches/", {
+                const response = await axios.get("/users/matches/", {
                     headers: { 
                         Authorization: `Bearer ${token}` 
                     },

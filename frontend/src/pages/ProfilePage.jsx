@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios from "../api/axios";
 import "../styles/ProfilePage.css";
 import Loader from "../components/Loader";
 
@@ -20,7 +20,7 @@ const ProfilePage = () => {
         const fetchUserProfile = async () => {
             try{
                 const token = localStorage.getItem("token");
-                const response = await axios.get(`http://localhost:8000/api/users/profile/${uid}/`, {
+                const response = await axios.get(`/users/profile/${uid}/`, {
                     headers: { 
                         Authorization: `Bearer ${token}`,
                     },
