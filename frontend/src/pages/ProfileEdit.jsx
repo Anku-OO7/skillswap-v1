@@ -77,7 +77,7 @@ const ProfileEdit = () => {
             };
              
             const response = await axios.put(
-                "http://localhost:8000/api/users/profile/update/",
+                "/users/profile/update/",
                 formData,
                 {
                     headers: {
