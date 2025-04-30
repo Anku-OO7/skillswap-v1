@@ -3,6 +3,7 @@ from django.db import models
 from django.conf import settings
 from django.contrib.postgres.fields import ArrayField
 from django.db import migrations, models
+from django.db.models import JSONField 
 
 class CustomUserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
@@ -53,7 +54,7 @@ class Profile(models.Model):
             "id": self.id,
             "user_id": self.user.id,
             "bio": self.bio,
-            "skills": [skill.name for skill in self.skills.all()],
+            "skills": JSONField(default=list, blank=True),
             "github": self.github,
             "linkedin": self.linkedin,
             "location": self.location,
