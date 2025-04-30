@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+
+# Environment
+.env
+/venv/
+*.env
+
+# Django
+db.sqlite3
+*.db
+
+# VSCode / IDE
+.vscode/
+.idea/
+
+# Migrations (optional if unnecessary to track)
+*/migrations/__pycache__/
+*/migrations/*.pyc
+
+# Static
+staticfiles/
+media/
+
+# Node (if used)
+node_modules/

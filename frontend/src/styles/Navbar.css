@@ -1,0 +1,70 @@
+.custom-navbar {
+    background: linear-gradient(90deg, #0d0d0d, #1a1a1a);
+    padding: 0.8rem 1.5rem;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+.brand-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00d9ff !important;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.brand-logo:hover {
+    color: #66ffff !important;
+}
+
+.nav-link-item {
+    color: #ffffff !important;
+    margin: 0 10px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link-item:hover {
+    color: #00d9ff !important;
+    transform: translateY(-2px);
+}
+
+.welcome-text {
+    color: #ccc;
+    margin: 0 12px;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.logout-button {
+    background: #ff4d4d;
+    color: #fff !important;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 8px;
+    margin-left: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #e60000;
+    cursor: pointer;
+}
+
+.custom-toggler {
+    border-color: #00d9ff;
+}
+
+.custom-toggler:focus, 
+.custom-toggler:active {
+    box-shadow: none;
+}
+
+@media (max-width: 991px) {
+    .welcome-text {
+        display: block;
+        text-align: center;
+        margin-top: 1rem;
+    }
+}

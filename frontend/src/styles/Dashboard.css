@@ -1,0 +1,175 @@
+/* ===== Dashboard Main Container =====*/
+.dashboard-container {
+    padding: 2rem;
+    padding-top: 90px;
+    max-width: 1200px;
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== Heading Styles =====*/
+.dashboard-header {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* ===== Top Matches Section =====*/
+.top-matches-section {
+    margin-bottom: 3rem;
+}
+.top-matches-section h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+.matches-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+.match-card {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1rem;
+    text-align: center;
+    width: 220px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.match-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+.match-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    border: 2px solid #007bff;
+}
+.skill-badges {
+    margin-top: 0.5rem;
+}
+.skill-badge {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin: 3px;
+    display: inline-block;
+}
+
+.dashboard-matches-link {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.matches-button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+.matches-button:hover {
+    background-color: #218838;
+}
+
+/* ===== Recommendations Section =====*/
+.recommendations-section {
+    margin-top: 2rem;
+}
+.recommendations-section h2 {
+    font-size: 2rem;
+    color: #28a745;
+    margin-bottom: 1rem;
+}
+.recommendations-list {
+    list-style: none;
+    padding: 0;
+}
+.recommendations-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    background: #f8f9fa;
+    padding: 0.75rem;
+    border-radius: 12px;
+    transition: background 0.3s ease;
+}
+.recommendations-list li:hover {
+    background: #e9ecef;
+}
+.recommendation-avatar {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 1rem;
+    border: 1px solid #ccc;
+}
+.recommendation-info {
+    flex: 1;
+}
+.recommendation-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* ===== Logout Button =====*/
+.logout-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+.logout-button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.logout-button:hover {
+    background-color: #c82333;
+}
+
+/* ===== Loading State =====*/
+.dashboard-loading {
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 1.5rem;
+    color: #666;
+}
+
+/* ===== Responsiveness =====*/
+@media (max-width: 768px) {
+    .matches-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .match-card {
+        width: 90%;
+    }
+    .recommendations-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .recommendation-avatar {
+        margin-bottom: 0.5rem;
+    }
+}

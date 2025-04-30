@@ -1,0 +1,42 @@
+Folder PATH listing for volume Windows
+Volume serial number is 46C8-E9DC
+C:\USERS\RADHI\DESKTOP\ASSIGNMENTS\PROJECT\SKILLSWAP\FRONTEND\SRC
+¦   App.css
+¦   App.jsx
+¦   firebase.js
+¦   index.css
+¦   main.jsx
+¦   
++---assets
+¦       react.svg
+¦       
++---components
+¦   +---auth
+¦   ¦       Login.jsx
+¦   ¦       Signup.jsx
+¦   ¦       
+¦   +---common
+¦           Navbar.jsx
+¦           ProtectedRoute.jsx
+¦           SkillSelector.jsx
+¦           
++---context
+¦       AuthContext.jsx
+¦       
++---hooks
++---pages
+¦       Dashboard.jsx
+¦       Home.jsx
+¦       Matches.jsx
+¦       Profile.jsx
+¦       ProfileEdit.jsx
+¦       ProfilePage.jsx
+¦       
++---styles
+¦       Dashboard.css
+¦       Matches.css
+¦       Profile.css
+¦       
++---utils
+        matchUsers.js
+        
