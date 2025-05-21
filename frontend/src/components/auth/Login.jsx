@@ -4,6 +4,7 @@ import axios from "../../api/axios";
 import { useAuth } from "../../context/AuthContext";
 import "../../styles/Auth.css"
 import { toast } from "react-toastify";
+import api from "../../api/axios";
 
 const Login = () => {
     const { fetchUserData } = useAuth();
@@ -16,10 +17,16 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("/users/login/", {
+            // const response = await axios.post("/users/login/", {
+            //     email,
+            //     password,
+            // });
+            const data = {
                 email,
                 password,
-            });
+            };
+
+            const response = await api.post('/api/users/login/', data)
 
             const accessToken = response.data.access;
             const refreshToken = response.data.refresh;

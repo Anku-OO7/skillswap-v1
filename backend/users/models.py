@@ -74,3 +74,35 @@ class Migration(migrations.Migration):
     ]
     # def __str__(self):
     #     return self.user.email
+
+class SkillPost(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='skill_posts')
+    content = models.TextField()
+    image = models.ImageField(upload_to='post_images/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user.email}'s Post at {self.created_at.strftime('%Y-%m-%d %H:%M')}"
+    
+class SkillPostLike(models.Model):
+    post = models.ForeignKey(SkillPost, on_delete=models.CASCADE, related_name='likes')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('post', 'user')
+
+    def __str__(self):
+        return f"{self.user.email} liked Post {self.post.id}"
+    
+class SkillPostComment(models.Model):
+    post = models.ForeignKey(SkillPost, on_delete=models.CASCADE, related_name='comments')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
+    
+    def __str__(self):
+        return f"Comment by {self.user.email} on Post {self.post.id}"

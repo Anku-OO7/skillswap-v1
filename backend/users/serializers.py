@@ -1,6 +1,6 @@
 from  rest_framework import serializers
 from django.contrib.auth import get_user_model
-from .models import CustomUser, Profile, Skill
+from .models import CustomUser, Profile, Skill, SkillPost, SkillPostLike, SkillPostComment
 from users import models
 import json
 
@@ -66,3 +66,28 @@ class ProfileWithUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
         fields = ['user', 'bio', 'skills', 'github', 'linkedin', 'location', 'photo']
+
+class SkillPostSerializer(serializers.ModelSerializer):
+    user_email = serializers.EmailField(source='user.email', read_only=True)
+    user_id = serializers.IntegerField(source='user.id', read_only=True)
+    username = serializers.CharField(source='user.username', read_only=True)
+
+    class Meta:
+        model = SkillPost
+        fields = ['id', 'username', 'user_id', 'user_email', 'content', 'image', 'created_at']
+        read_only_fields = ['user_id','username', 'user_email', 'create_at']
+
+class SkillPostLikeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SkillPostLike 
+        fields = ['id', 'user', 'post', 'created_at']
+        read_only_fields = ['id', 'user', 'created_at']
+
+class SkillPostCommentSerializer(serializers.ModelSerializer):
+    username = serializers.CharField(source='user.username', read_only=True)
+    user_email = serializers.EmailField(source='user.email', read_only=True)
+
+    class Meta:
+        model = SkillPostComment
+        fields = ['id', 'post', 'user_email', 'username', 'content', 'created_at']
+        read_only_fields = ['user_email', 'username', 'created_at']

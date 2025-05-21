@@ -17,6 +17,8 @@ from django.db.models import Q
 import json
 from rest_framework.generics import RetrieveAPIView, ListAPIView
 from django.contrib.auth import get_user_model
+from .models import SkillPost, SkillPostLike, SkillPostComment
+from .serializers import SkillPostSerializer, SkillPostCommentSerializer
 
 logger = logging.getLogger(__name__)
 User = get_user_model()
@@ -333,3 +335,42 @@ def get_user_profile(request, uid):
         return Response(data, status=status.HTTP_200_OK)
     except Profile.DoesNotExist:
         return Response({"error": "User profile not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+class SkillPostListCreateView(generics.ListCreateAPIView):
+    queryset = SkillPost.objects.all().order_by('-created_at')
+    serializer_class = SkillPostSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+    
+class SkillPostDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = SkillPost.objects.all()
+    serializer_class = SkillPostSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class ToggleLikeView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def post(self, request, post_id):
+        post = SkillPost.objects.get(pk=post_id)
+        user = request.user
+
+        like, created = SkillPostLike.objects.get_or_create(post=post, user=user)
+
+        if not created:
+            like.delete()
+            return Response({'liked': False})
+        else:
+            return Response({'liked': True})
+        
+class SkillPostCommentListCreateView(generics.ListCreateAPIView):
+    serializer_class = SkillPostCommentSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+    def get_queryset(self):
+        post_id = self.kwargs['post_id']
+        return SkillPostComment.objects.filter(post_id=post_id)
+    def perform_create(self, serializer):
+        post_id = self.kwargs['post_id']
+        serializer.save(user=self.request.user, post_id=post_id)

@@ -1,0 +1,63 @@
+import React, { useState } from "react";
+import axios from "axios";
+import api from "../api/axios";
+
+const CreatePost = ({ onPostCreated }) => {
+    const [content, setContent] = useState('');
+    const [image, setImage] = useState(null);
+    const [loading, setLoading] = useState(false);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+
+        // const token = localStorage.getItem('token');
+
+        const formData = new FormData();
+        formData.append('content', content);
+        if (image) {
+            formData.append('image', image);
+        }
+
+        try  {
+            const res = await api.post('/api/users/skillposts', formData,{//axios.post('http://127.0.0.1:8000/api/users/skillposts/', formData, {
+                // headers: {
+                //     // Authorization: `Bearer $(token)`,
+                //     'Content-Type': 'multipart/form-data',
+                // },
+            });
+
+            setContent('');
+            setImage(null);
+            if (onPostCreated) onPostCreated();
+        } catch (error) {
+            setLoading(false);
+        }
+    };
+
+    return (
+        <form onSubmit={handleSubmit} style={{ marginBottom: '2rem' }}>
+            <h3>Create a New Skill Post</h3>
+            <textarea
+                placeholder="Write something about your skill, learning, or offer help..."
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+                required
+                style={{ width: '100%', minHeight:'80px', marginBottom: '10px', padding: '10px'}}
+            />
+            <br />
+            <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => setImage(e.target.files[0])}
+                style={{ marginBottom: '10px'}}
+            />
+            <br />
+            <button type="submit" disabled={loading}>
+                {loading ? 'Posting...' : 'Post'}
+            </button>
+        </form>
+    );
+};
+
+export default CreatePost;

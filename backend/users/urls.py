@@ -1,5 +1,5 @@
 from django.urls import path
-from users.views import CurrentUserView, SignupView, LoginView, ProtectedView, ProfileView, add_user_skill, edit_profile, get_user_profile, get_user_skills, matches_view, remove_user_skill, search_profiles, update_profile, get_skills_list, ProfileDetailView, ProfileListCreateView, UserListView, skill_suggestions
+from users.views import CurrentUserView, SignupView, LoginView, ProtectedView, ProfileView, SkillPostDetailView, SkillPostListCreateView, ToggleLikeView, SkillPostCommentListCreateView, add_user_skill, edit_profile, get_user_profile, get_user_skills, matches_view, remove_user_skill, search_profiles, update_profile, get_skills_list, ProfileDetailView, ProfileListCreateView, UserListView, skill_suggestions
 urlpatterns = [
     path('signup/', SignupView.as_view(), name='signup'),
     path('login/', LoginView.as_view(), name='login'),
@@ -21,4 +21,8 @@ urlpatterns = [
     path('edit_profile/', edit_profile, name='edit-profile'),
     path('user/', CurrentUserView.as_view()),
     path('matches/', matches_view, name='matches'),
+    path('skillposts/', SkillPostListCreateView.as_view(), name='skillpost-list-create'),
+    path('skillposts/<int:pk>/', SkillPostDetailView.as_view(), name='skillpost-detail'),
+    path('skillposts/<int:post_id>/like/', ToggleLikeView.as_view(), name='toggle-like'),
+    path('skillposts/<int:post_id>/comments/', SkillPostCommentListCreateView.as_view(), name='skillpost-comments'),
 ]
