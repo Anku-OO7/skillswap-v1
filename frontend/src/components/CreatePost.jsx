@@ -22,7 +22,7 @@ const CreatePost = ({ onPostCreated }) => {
 
         try  {
             console.log("Sending post request...")
-            const res = await api.post('/users/skillposts', formData, {
+            const res = await api.post('/api/users/skillposts', formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'multipart/form-data',
