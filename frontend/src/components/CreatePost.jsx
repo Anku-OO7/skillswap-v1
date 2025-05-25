@@ -11,7 +11,7 @@ const CreatePost = ({ onPostCreated }) => {
         e.preventDefault();
         setLoading(true);
 
-        // const token = localStorage.getItem('token');
+        const token = localStorage.getItem('token');
 
         const formData = new FormData();
         formData.append('content', content);
@@ -20,17 +20,20 @@ const CreatePost = ({ onPostCreated }) => {
         }
 
         try  {
-            const res = await api.post('/api/users/skillposts', formData,{//axios.post('http://127.0.0.1:8000/api/users/skillposts/', formData, {
-                // headers: {
-                //     // Authorization: `Bearer $(token)`,
-                //     'Content-Type': 'multipart/form-data',
-                // },
+            const res = await api.post('/api/users/skillposts', formData, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    'Content-Type': 'multipart/form-data',
+                },
             });
 
             setContent('');
             setImage(null);
             if (onPostCreated) onPostCreated();
         } catch (error) {
+            console.error("Error creating post:", error.response?.data || error.message);
+            alert("Failed to post");
+        } finally {
             setLoading(false);
         }
     };
