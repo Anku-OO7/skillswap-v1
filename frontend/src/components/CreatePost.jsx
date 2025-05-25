@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import api from "../api/axios";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CreatePost = ({ onPostCreated }) => {
     const [content, setContent] = useState('');
