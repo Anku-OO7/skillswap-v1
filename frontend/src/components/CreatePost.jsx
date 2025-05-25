@@ -10,6 +10,7 @@ const CreatePost = ({ onPostCreated }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
+        console.log("Clicked Submit");
 
         const token = localStorage.getItem('token');
 
@@ -20,19 +21,22 @@ const CreatePost = ({ onPostCreated }) => {
         }
 
         try  {
-            const res = await api.post('/api/users/skillposts', formData, {
+            console.log("Sending post request...")
+            const res = await api.post('/users/skillposts', formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'multipart/form-data',
                 },
             });
+            console.log("Post created:", res.data);
 
             setContent('');
             setImage(null);
             if (onPostCreated) onPostCreated();
+            toast.success("Post created");
         } catch (error) {
             console.error("Error creating post:", error.response?.data || error.message);
-            alert("Failed to post");
+            toast.error("Failed to create post.")
         } finally {
             setLoading(false);
         }

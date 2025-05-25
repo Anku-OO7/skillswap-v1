@@ -9,7 +9,7 @@ import axios from 'axios';
 // });
 
 const api = axios.create({
-    baseURL: 'https://skillswap-backend-om1g.onrender.com',
+    baseURL: import.meta.env.VITE_API_BASE_URL || 'https://skillswap-backend-om1g.onrender.com/api',
     withCredentials: false,
 });
 
