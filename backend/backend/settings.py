@@ -177,6 +177,7 @@ AUTHENTICATION_BACKENDS =[
 CORS_ALLOWED_ORIGINS =[
     "https://skillswap-v1.vercel.app",
     "http://localhost:5173",
+    "https://skillswap-v1-git-cors-clean-anku-oo7s-projects.vercel.app"
 ]
 # CORS_ALLOW_ALL_ORIGINS = True
 
