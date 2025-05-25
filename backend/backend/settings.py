@@ -180,7 +180,7 @@ CORS_ALLOWED_ORIGINS =[
 ]
 # CORS_ALLOW_ALL_ORIGINS = True
 
-CORS_ALLOW_CREDENTIALS= False
+CORS_ALLOW_CREDENTIALS= True
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
@@ -188,6 +188,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CORS_ALLOW_HEADERS = list(default_headers) + [
+    "access-control-allow-origin",
+    "access-control-allow-credentials",
     "accept",
     "authorization",
     "content-type",
