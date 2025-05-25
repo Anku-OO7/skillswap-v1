@@ -6,6 +6,7 @@ import axios from "../api/axios";
 import "../styles/Dashboard.css";
 import Loader from "../components/Loader";
 import { toast } from "react-toastify";
+import api from "../api/axios";
 
 const Dashboard = () => {
     const { user, logout } = useAuth();
@@ -22,7 +23,7 @@ const Dashboard = () => {
             if (!user) return;
             try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get("/users/matches/", {
+                const response = await api.get("/api/users/matches/", {  //axios.get("/users/matches/", {
                     headers: { 
                         Authorization: `Bearer ${token}` 
                     },

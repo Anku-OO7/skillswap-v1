@@ -21,12 +21,10 @@ const Login = () => {
             //     email,
             //     password,
             // });
-            const data = {
+            const response = await api.post('/api/users/login/', {
                 email,
                 password,
-            };
-
-            const response = await api.post('/api/users/login/', data)
+            });
 
             const accessToken = response.data.access;
             const refreshToken = response.data.refresh;

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import "../styles/Matches.css";
 import Loader from "../components/Loader";
 import { toast } from "react-toastify";
+import api from "../api/axios";
 
 const Matches = () => {
     const { user } = useAuth();
@@ -23,7 +24,7 @@ const Matches = () => {
 
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get('/users/matches/', {
+            const response = await api.get("/api/users/matches/", {  //axios.get('/users/matches/', {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

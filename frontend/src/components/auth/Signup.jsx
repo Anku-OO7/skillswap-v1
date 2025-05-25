@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "../../api/axios";
+// import axios from "../../api/axios";
 import "../../styles/Auth.css";
 import { toast } from "react-toastify";
+import api from "../../api/axios";
 
 const Signup = () => {
     const [email, setEmail] = useState("");
@@ -16,10 +17,10 @@ const Signup = () => {
         setError("");
 
         try {
-            const response = await axios.post("/users/signup/", {
-                email,
-                password,
-            });
+            const data = { email, password };
+
+            const response = await api.post("/api/users/signup", data);
+
             navigate("/dashboard");
             setTimeout(() => {
                 toast.success("Account created successfully!", { autoClose: 3000 });

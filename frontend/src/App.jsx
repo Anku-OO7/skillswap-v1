@@ -15,6 +15,8 @@ import NotFound from "./pages/NotFound.jsx";
 import LandingPage from "./pages/LandingPage.jsx";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import SkillPostPage from "./pages/SkillPostPage.jsx";
+import CreatePost from "./components/CreatePost.jsx";
 
 const App = () => {
   const { user } = useContext(AuthContext);
@@ -33,6 +35,8 @@ const App = () => {
         <Route path="/matches" element={<Matches />} />
         <Route path="/edit-profile" element={<ProfileEdit />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/posts" element={<SkillPostPage />} />
+        <Route path="/create-post" element={<ProtectedRoute><CreatePost /></ProtectedRoute>} />
       </Routes>
     </Router>
   );

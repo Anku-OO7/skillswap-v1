@@ -3,6 +3,8 @@ import axios from "../api/axios";
 import { useNavigate } from "react-router-dom";
 import "../styles/Profile.css";
 import Loader from "../components/Loader";
+import api from "../api/axios";
+
 
 const Profile = () => {
     const [profile, setProfile] = useState(null);
@@ -13,11 +15,11 @@ const Profile = () => {
         const fetchProfile = async () => {
             try {
                 const token = localStorage.getItem("token");
-                const res = await axios.get("/users/profile/", {
+                const res = await api.get("/api/users/profile/", {   //axios.get("/users/profile/", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
-                    withCredentials: true,
+                    // withCredentials: true,
                 });
                 setProfile(res.data);
             } catch (err) {

@@ -5,6 +5,7 @@ import { useAuth } from "../context/AuthContext";
 import "../styles/ProfileEdit.css";
 import Loader from "../components/Loader";
 import { toast } from "react-toastify";
+import api from "../api/axios";
 
 const ProfileEdit = () => {    
     const [firstName, setFirstName] = useState("");
@@ -24,11 +25,11 @@ const ProfileEdit = () => {
         const fetchProfile = async () => {
             try {
                 const token = localStorage.getItem("token");
-                const res = await axios.get("/users/profile/", {
+                const res = await api.get("/api/users/profile/", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
-                    withCredentials: true,
+                    // withCredentials: true,
                 });
                 const { first_name, email, bio, skills, photo, github, linkedin, location } = res.data;
                 setFirstName(first_name || "");

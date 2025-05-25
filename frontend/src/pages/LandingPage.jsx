@@ -1,17 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/LandingPage.css";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 const LandingPage = () => {
+    const { user } = useContext(AuthContext);
+    
     return (
         <div className="landing-container">
             <header className="landing-header">
                 <h1>Welcome to SkillSwap</h1>
                 <p>Your one-stop destination to learn, teach and connect.</p>
-                <div className="landing-buttons">
-                    <Link to="/signup" className="btn btn-primary">Get Started</Link>
-                    <Link to="/login" className="btn btn-outline-light">Login</Link>
+                {!user ? (
+                    <div className="landing-buttons">
+                        <Link to="/signup" className="btn btn-primary">Get Started</Link>
+                        <Link to="/login" className="btn btn-outline-light">Login</Link>
                 </div>
+                ): (
+                    <div className="landing-buttons">
+                        <Link to="/dashboard" className="btn btn-success">Go to Dashboard</Link>
+                    </div>
+                )}
             </header>
 
             <section className="landing-features">

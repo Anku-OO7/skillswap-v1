@@ -28,11 +28,13 @@ const AppNavbar = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
                         <Nav.Link as={Link} to="/" className="nav-link-item">Home</Nav.Link>
-                        <Nav.Link as={Link} to="/profile" className="nav-link-item">Profile</Nav.Link>
                         <Nav.Link as={Link} to="/dashboard" className="nav-link-item">Dashboard</Nav.Link>
+                        <Nav.Link as={Link} to="/profile" className="nav-link-item">Profile</Nav.Link>
                         {user && (
                             <Nav.Link as={Link} to="/matches" className="nav-link-item">Matches</Nav.Link>
                         )}
+                        {/* <Nav.Link as={Link} to="/posts">Explore Posts</Nav.Link>
+                        <Nav.Link as={Link} to="/create-post">Create Post</Nav.Link> */}
                         {!user && (
                             <>
                             <Nav.Link as={Link} to="/signup" className="nav-link-item">Sign Up</Nav.Link>
@@ -44,6 +46,8 @@ const AppNavbar = () => {
                                 <Navbar.Text className="welcome-text">
                                     Welcome, {user?.first_name || "User"}!
                                 </Navbar.Text>
+                                <Nav.Link as={Link} to="/posts">Explore Posts</Nav.Link>
+                                <Nav.Link as={Link} to="/create-post">Create Post</Nav.Link>
                                 <Nav.Link as="button" className="logout-button" onClick={handleLogout}>
                                     Logout
                                 </Nav.Link>
