@@ -346,8 +346,9 @@ class SkillPostListCreateView(generics.ListCreateAPIView):
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        serializer.save(user=self.request.user)
-        return Response(serializer.data, status=201)
+        instance = serializer.save(user=request.user)
+        response_serializer = self.get_serializer(instance)
+        return Response(response_serializer.data, status=201)
     
 class SkillPostDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = SkillPost.objects.all()
