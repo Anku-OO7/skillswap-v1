@@ -337,9 +337,11 @@ def get_user_profile(request, uid):
         return Response({"error": "User profile not found."}, status=status.HTTP_404_NOT_FOUND)
     
 class SkillPostListCreateView(generics.ListCreateAPIView):
-    queryset = SkillPost.objects.all().order_by('-created_at')
     serializer_class = SkillPostSerializer
     permission_classes = [permissions.IsAuthenticated]
+    
+    def get_queryset(self):
+        return SkillPost.objects.all().order_by('-created_at')
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
