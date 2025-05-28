@@ -339,12 +339,15 @@ def get_user_profile(request, uid):
 class SkillPostListCreateView(generics.ListCreateAPIView):
     serializer_class = SkillPostSerializer
     permission_classes = [permissions.IsAuthenticated]
-    
+
     def get_queryset(self):
         return SkillPost.objects.all().order_by('-created_at')
 
-    def perform_create(self, serializer):
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
         serializer.save(user=self.request.user)
+        return Response(serializer.data, status=201)
     
 class SkillPostDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = SkillPost.objects.all()
