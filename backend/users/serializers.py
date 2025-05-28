@@ -70,12 +70,12 @@ class ProfileWithUserSerializer(serializers.ModelSerializer):
 class SkillPostSerializer(serializers.ModelSerializer):
     user_email = serializers.EmailField(source='user.email', read_only=True)
     user_id = serializers.IntegerField(source='user.id', read_only=True)
-    first_name = serializers.CharField(source='user.first_name', read_only=True)
+    username = serializers.CharField(source='user.first_name', read_only=True)
 
     class Meta:
         model = SkillPost
-        fields = ['id', 'first_name', 'user_id', 'user_email', 'content', 'image', 'created_at']
-        read_only_fields = ['user_id','first_name', 'user_email', 'created_at']
+        fields = ['id', 'username', 'user_id', 'user_email', 'content', 'image', 'created_at']
+        read_only_fields = ['user_id','username', 'user_email', 'created_at']
 
 class SkillPostLikeSerializer(serializers.ModelSerializer):
     class Meta:
