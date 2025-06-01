@@ -187,7 +187,7 @@ CORS_ALLOWED_ORIGINS =[
     "http://localhost:5173",
     "https://skillswap-v1-git-cors-clean-anku-oo7s-projects.vercel.app"
 ]
-# CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOW_CREDENTIALS= True
 
@@ -206,4 +206,10 @@ CORS_ALLOW_HEADERS = list(default_headers) + [
     "user-agent",
     "x-csrftoken",
     "x-requested-with",
+]
+
+CORS_EXPOSE_HEADERS = [
+    'Content-Type',
+    'X-CSRFToken',
+    'Authorization',
 ]
