@@ -8,13 +8,16 @@ const SkillPostPage = () => {
     const [posts, setPosts] = useState([]);
 
     const fetchPosts = () => {
+        console.log("Fetching posts...");
         // const token = localStorage.getItem("token");
         api.get('/api/users/skillposts/')//axios.get('http://127.0.0.1:8000/api/users/skillposts/', {
     //     headers: {
     //         Authorization: `Bearer ${token}`,
     //     },
     // })
-        .then(res => setPosts(res.data))
+        .then(res => {
+            console.log("Posts fetched:", res.data);
+            setPosts(res.data); })
         .catch(err => console.error('Error fetching posts:', err));
         };
     useEffect(() => {

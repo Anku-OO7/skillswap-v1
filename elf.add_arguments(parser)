@@ -1,0 +1,197 @@
+[33mcommit 327c5696827533ceac87a72deda5a5391dbfaccf[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mcors-clean[m[33m, [m[1;31morigin/cors-clean[m[33m)[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Sun Jun 1 16:19:20 2025 +0530
+
+    Sanitized settings.py -removed hardcoded credentials
+
+[33mcommit 661388499d1bb12ab90674fc62b06f0b44990bca[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Thu May 29 01:20:34 2025 +0530
+
+    Fix: Ensure full SkillPost data is returned after creation
+
+[33mcommit 4e761cfa770622d70b0158946128e8ef8a967cac[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Thu May 29 00:31:57 2025 +0530
+
+    Fix: Ensure SkillPostSerializer returns full post data
+
+[33mcommit c836350ce4a5204f8d0b134abc8733683ea0165a[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Thu May 29 00:21:09 2025 +0530
+
+    Fix: Serializer now correctly returns user info with post
+
+[33mcommit 3b6e0e3252c9c31cef5e831b88b5f02fdc38cd83[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Wed May 28 23:17:49 2025 +0530
+
+    Fix: Return new post in SkillPostListCreateView
+
+[33mcommit a65c82f64f27a0adc9230d5bf4f39ee1333c9671[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Wed May 28 22:40:37 2025 +0530
+
+    Fix: Show all SkillPosts in SkillPostCreateView
+
+[33mcommit e72db8b0c91276f26470f35b1a58fa52ecc80bf8[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Mon May 26 00:30:46 2025 +0530
+
+    Fix: defined toast
+
+[33mcommit b992850b3759193b387ea6a5acac8ad0687ef5a7[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Mon May 26 00:24:17 2025 +0530
+
+    Fix: corrected the navigation link
+
+[33mcommit aa89d0aaac9e6b66e5c0e4c07e782e28bc390be7[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Mon May 26 00:10:13 2025 +0530
+
+    Fix: CreatePost submission issue and logic added
+
+[33mcommit 4fe4e05eb02db7a617ec34a3fb161d1bda89c0d1[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Sun May 25 22:52:43 2025 +0530
+
+    Fix: Corrected token header formatting in CreatPost.jsx
+
+[33mcommit 0c3ef782648cc27e570adb1116088f032ea89e63[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Sun May 25 21:22:03 2025 +0530
+
+    Fix: Added Vercel preview domain to CORS settings
+
+[33mcommit 25d5a108cfac73178a1d16f90fd3341a08b6b95b[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Sun May 25 20:51:42 2025 +0530
+
+    Fix: CORS issue on profile page
+
+[33mcommit 39c233599159b7ce72ca15678ecafe462cacb784[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Sun May 25 20:32:09 2025 +0530
+
+    Fix: Added new features, updated login/signup, styling, SkillPost and migrations
+
+[33mcommit fc9250650c145641682af4420c1322bf1c41c870[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Thu May 22 08:12:09 2025 +0530
+
+    Fix: backend/requirements.txtupdated with all dependencies
+
+[33mcommit 76ebf121e1083d9de39030d40d0816294eee9281[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Wed May 21 10:45:54 2025 +0530
+
+    Fix: Manually updated backend requirements.txt for deployment
+
+[33mcommit 1a3e9a4bf8db037ded147937ac62e9d80d636ed8[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Wed May 21 10:20:44 2025 +0530
+
+    Fix: Add python-dotenv to requirements.txt
+
+[33mcommit ff427792e2a077f4e972af2213de56857194d313[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Wed May 21 09:39:54 2025 +0530
+
+    Fallback: Add requirements.txt to backend folder too
+
+[33mcommit 0a0f046bba0b8a07b330662b5c4566450e112761[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Wed May 21 08:53:48 2025 +0530
+
+    Fix: added Pillow to requirements.txt
+
+[33mcommit 5467f80c17fa0c14170d290283155d3da80bb919[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Wed May 21 08:32:24 2025 +0530
+
+    Clean rebuild: added components, updated logic, and requirements.txt
+
+[33mcommit aaa8dcbbef335a8bf29bb3331cf9d91e3c5e143f[m[33m ([m[1;32mmain[m[33m)[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Tue May 20 12:22:36 2025 +0530
+
+    Move requirements.text to root for Render
+
+[33mcommit 330eedf78c2982c59342b026eb3e88d638c53165[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Thu May 1 03:51:01 2025 +0530
+
+    fix: removed hardcoded localhost URL from ProfileEdit
+
+[33mcommit 45b84dd65b38e6c0b48cf33473d6bce0d9c9395d[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Thu May 1 03:32:30 2025 +0530
+
+    fix: use axios instance with auth token in AuthContext
+
+[33mcommit b78815edc26a42b01abf5f646327cfd7571b07b3[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Thu May 1 03:24:11 2025 +0530
+
+    fix: removed hardcoded user endpoint from AuthContext
+
+[33mcommit b8e38070140e15f2c4b2a5590efb59602d47dc51[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Thu May 1 03:07:08 2025 +0530
+
+    fix: added STATIC_ROOT for staticfiles
+
+[33mcommit 27d055b08e71457edc9a295a3b41e3a671b40f84[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Thu May 1 03:01:02 2025 +0530
+
+    Fix: reset migrations and refactored skills field
+
+[33mcommit 525db9b86344aa9afef22bfe750ccc4986ecde36[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Thu May 1 02:19:06 2025 +0530
+
+    fix: switched to dj_database_url for Render PostgreSQL
+
+[33mcommit 847b3ee021cf85814db7032b48cdb2323ba2031e[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Thu May 1 01:02:24 2025 +0530
+
+    fix: corrected axios import paths for build
+
+[33mcommit e3c0f2df0b73a240819d31624e11147e10e06f4f[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Thu May 1 00:43:53 2025 +0530
+
+    fix: added vercel rewrite config to handle 404 on refresh
+
+[33mcommit 7fd8478c8d2c2a3264595e320801543d938ad6cc[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Thu May 1 00:12:27 2025 +0530
+
+    fix: switched API calls to use axios instance + updated backend CORS
+
+[33mcommit f994ee59fac285a6cac4c69598c1306c1199bed9[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Wed Apr 30 19:05:01 2025 +0530
+
+    Fix: Added root routeto backend for Render
+
+[33mcommit a504076eb80af0fc0676a83783feedcf3bca3f56[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Wed Apr 30 18:48:06 2025 +0530
+
+    Fix: Added waitress to requirements for Render deployment
+
+[33mcommit 14d61c2a93efbd2bed5ef5947acf0679d8d5bea2[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Wed Apr 30 17:17:12 2025 +0530
+
+    Add LICENSE.md and project screenshots
+
+[33mcommit d8cc09dead14812798a5848fcd90e68623ea3031[m
+Author: Ankit Kumar <ankitkumar786687@gmail.com>
+Date:   Wed Apr 30 16:39:39 2025 +0530
+
+    SkillSwap v1.0 - Phase 1 stable release (React + Django + Firebase)

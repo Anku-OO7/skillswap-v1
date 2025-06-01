@@ -30,11 +30,16 @@ const CreatePost = ({ onPostCreated }) => {
                     'Content-Type': 'multipart/form-data',
                 },
             });
+            console.log("Raw API response:", res);
+            console.log("Post created:", res.data);
             console.log("Post created:", res.data);
 
             setContent('');
             setImage(null);
-            if (onPostCreated) onPostCreated();
+            if (onPostCreated) {
+                onPostCreated();
+                console.log("onPostCreated callback called");
+            }
             toast.success("Post created");
         } catch (error) {
             console.error("Error creating post:", error.response?.data || error.message);
